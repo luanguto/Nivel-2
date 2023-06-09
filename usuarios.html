@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Usuários de Teste via REST</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="bg-warning">
+    <header>
+		<nav class="navbar navbar-expand bg-dark">
+            <div class="navbar-nav">
+              <a class="nav-link  btn btn-primary mx-3 text-white" href="ordenando.html">Ordenando</a>
+              <a class="nav-link   btn btn-primary mx-3 text-white" href="receitas.html">Receitas</a>
+              <a class="nav-link active btn btn-primary mx-3 text-white" href="usuarios.html">Usuários</a>
+            </div>
+</header>
+<main class="container">
+	<h1 class="text-center p-5">Usuários de Teste via REST</h1>
+
+
+	<div id="usuarios" class="container-fluid ">
+		<div class="row">
+			<div v-for="(user, index) in users" :key="index" class="col-sm-4">
+				<div class="card p-2 m-3">
+					<img :src="user.avatar" class="card-img-top" alt="Avatar">
+					<div class="card-body">
+						<h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+						<p class="card-text">{{ user.email }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <p class="text-center fw-bold">Fonte dos dados: <a href="https://reqres.in" target="_blank">reqres.in</a></p>
+
+</main>
+	<script src="usuarios.js">     
+	</script>
+
+</body>
+</html>
+
